@@ -143,7 +143,10 @@ app.post('/delete', (req, res) => {
 
 })
 
-
-app.listen(7000, () => {
-  console.log('Serve is running 7000')
+let port = process.env.PORT;
+if (port == null || port == "") {
+  port = 7000;
+}
+app.listen(port, () => {
+  console.log('Serve is running susscessful')
 })
